@@ -9,6 +9,7 @@ import com.digitalhouse.desafioquality.service.HomeEvaluateService;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -47,11 +48,12 @@ public class HomeEvaluateServiceImpl implements HomeEvaluateService {
     }
 
     private RoomResponse assembleRoomResponseOf(RoomRequest request) {
-        return new RoomResponse(request.getRoomName(), request.getRoomWidth(), request.getRoomLength());
+        return new RoomResponse(request.getRoomName(), request.getRoomWidth(), request.getRoomLength(), request.calculateSquareMeters());
     }
 
     @Override
-    public PropertyResponse calculateEachRoomsSquareMeters(PropertyRequest request) {
-        return null;
+    public List<RoomResponse> calculateEachRoomsSquareMeters(PropertyRequest request) {
+        return request.getRooms().stream().map(r -> this.assembleRoomResponseOf(r)).collect(Collectors.toList());
     }
+
 }

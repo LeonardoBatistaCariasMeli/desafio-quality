@@ -4,6 +4,8 @@ import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
 import com.digitalhouse.desafioquality.dto.response.PropertyResponse;
 import com.digitalhouse.desafioquality.dto.response.RoomResponse;
 
+import java.util.List;
+
 public interface HomeEvaluateService {
 
     public PropertyResponse calculateSquareMeters(PropertyRequest request);
@@ -12,5 +14,5 @@ public interface HomeEvaluateService {
 
     public RoomResponse calculateGreaterRoom(PropertyRequest request);
 
-    public PropertyResponse calculateEachRoomsSquareMeters(PropertyRequest request);
+    public List<RoomResponse> calculateEachRoomsSquareMeters(PropertyRequest request);
 }
