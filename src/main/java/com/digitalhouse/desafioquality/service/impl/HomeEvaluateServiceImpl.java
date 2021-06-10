@@ -3,9 +3,13 @@ package com.digitalhouse.desafioquality.service.impl;
 import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
 import com.digitalhouse.desafioquality.dto.request.RoomRequest;
 import com.digitalhouse.desafioquality.dto.response.PropertyResponse;
+import com.digitalhouse.desafioquality.dto.response.RoomResponse;
 import com.digitalhouse.desafioquality.repository.NeighborhoodRepository;
 import com.digitalhouse.desafioquality.service.HomeEvaluateService;
 import org.springframework.stereotype.Service;
+
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 @Service
 public class HomeEvaluateServiceImpl implements HomeEvaluateService {
@@ -36,8 +40,14 @@ public class HomeEvaluateServiceImpl implements HomeEvaluateService {
     }
 
     @Override
-    public PropertyResponse calculateGreaterRoom(PropertyRequest request) {
-        return null;
+    public RoomResponse calculateGreaterRoom(PropertyRequest request) {
+        var higherRoom = request.getRooms().stream().max(Comparator.comparing(r -> r.calculateSquareMeters())).get();
+
+        return this.assembleRoomResponseOf(higherRoom);
+    }
+
+    private RoomResponse assembleRoomResponseOf(RoomRequest request) {
+        return new RoomResponse(request.getRoomName(), request.getRoomWidth(), request.getRoomLength());
     }
 
     @Override

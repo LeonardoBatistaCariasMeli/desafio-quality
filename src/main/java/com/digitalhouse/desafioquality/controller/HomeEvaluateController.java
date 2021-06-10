@@ -3,6 +3,7 @@ package com.digitalhouse.desafioquality.controller;
 
 import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
 import com.digitalhouse.desafioquality.dto.response.PropertyResponse;
+import com.digitalhouse.desafioquality.dto.response.RoomResponse;
 import com.digitalhouse.desafioquality.service.HomeEvaluateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +30,12 @@ public class HomeEvaluateController {
     @PostMapping("/property-price")
     public ResponseEntity<PropertyResponse> calculatePropertyPrice(@RequestBody PropertyRequest request) {
         var response = this.homeEvaluateService.calculatePropertyPrice(request);
+        return ResponseEntity.ok().body(response);
+    }
+
+    @PostMapping("/greater-room")
+    public ResponseEntity<RoomResponse> calculateGreaterRoom(@RequestBody PropertyRequest request) {
+        var response = this.homeEvaluateService.calculateGreaterRoom(request);
         return ResponseEntity.ok().body(response);
     }
 }
