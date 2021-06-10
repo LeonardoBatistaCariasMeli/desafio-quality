@@ -1,14 +1,20 @@
 package com.digitalhouse.desafioquality.dto.response;
 
-public class SquareMeterResponse {
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+public class PropertyResponse {
 
     private String propertyName;
     private String propertyNeighborhood;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double squareMetersTotal;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double squareMeterValue;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double propertyValue;
 
-    public SquareMeterResponse(String propertyName, String propertyNeighborhood, Double squareMetersTotal, Double squareMeterValue, Double propertyValue) {
+    public PropertyResponse(String propertyName, String propertyNeighborhood, Double squareMetersTotal, Double squareMeterValue, Double propertyValue) {
         this.propertyName = propertyName;
         this.propertyNeighborhood = propertyNeighborhood;
         this.squareMetersTotal = squareMetersTotal;

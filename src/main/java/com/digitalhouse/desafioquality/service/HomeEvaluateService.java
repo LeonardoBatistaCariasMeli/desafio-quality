@@ -1,13 +1,15 @@
 package com.digitalhouse.desafioquality.service;
 
-import com.digitalhouse.desafioquality.dto.request.HomeRequest;
-import com.digitalhouse.desafioquality.dto.response.HomeResponse;
-import com.digitalhouse.desafioquality.dto.response.SquareMeterResponse;
+import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
+import com.digitalhouse.desafioquality.dto.response.PropertyResponse;
 
 public interface HomeEvaluateService {
 
-    public SquareMeterResponse calculateSquareMeters(HomeRequest request);
-    public HomeResponse calculatePropertyPrice(HomeRequest request);
-    public HomeResponse calculateGreaterRoom(HomeRequest request);
-    public HomeResponse calculateEachRoomsSquareMeters(HomeRequest request);
+    public PropertyResponse calculateSquareMeters(PropertyRequest request);
+
+    public PropertyResponse calculatePropertyPrice(PropertyRequest request);
+
+    public PropertyResponse calculateGreaterRoom(PropertyRequest request);
+
+    public PropertyResponse calculateEachRoomsSquareMeters(PropertyRequest request);
 }

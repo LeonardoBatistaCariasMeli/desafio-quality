@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
-public class HomeRequest {
+public class PropertyRequest {
 
     @Size(min = 3, max = 30, message = "The property name must be between 3 or 30 characters.")
     @NotNull
@@ -17,7 +17,7 @@ public class HomeRequest {
     @NotNull
     private List<RoomRequest> rooms;
 
-    public HomeRequest(String propertyName, String propertyDistrict, List<RoomRequest> rooms) {
+    public PropertyRequest(String propertyName, String propertyDistrict, List<RoomRequest> rooms) {
         this.propertyName = propertyName;
         this.propertyDistrict = propertyDistrict;
         this.rooms = rooms;
