@@ -1,12 +1,9 @@
 package com.digitalhouse.desafioquality.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 public class RoomResponse {
     private String roomName;
     private Double roomWidth;
     private Double roomLength;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Double squareMeters;
 
     public RoomResponse(String roomName, Double roomWidth, Double roomLength, Double squareMeters) {

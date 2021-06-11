@@ -2,15 +2,17 @@ package com.digitalhouse.desafioquality.controller;
 
 
 import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
-import com.digitalhouse.desafioquality.dto.response.PropertyResponse;
+import com.digitalhouse.desafioquality.dto.response.PropertyPriceResponse;
+import com.digitalhouse.desafioquality.dto.response.PropertySquareMeterResponse;
 import com.digitalhouse.desafioquality.dto.response.RoomResponse;
-import com.digitalhouse.desafioquality.service.HomeEvaluateService;
+import com.digitalhouse.desafioquality.service.impl.HomeEvaluateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,25 +26,25 @@ public class HomeEvaluateController {
     }
 
     @PostMapping("/square-meters")
-    public ResponseEntity<PropertyResponse> calculateSquareMeters(@RequestBody PropertyRequest request) {
-        var response = this.homeEvaluateService.calculateSquareMeters(request);
+    public ResponseEntity<PropertySquareMeterResponse> calculatePropertySquareMeters(@Valid @RequestBody PropertyRequest request) {
+        var response = this.homeEvaluateService.calculatePropertySquareMeters(request);
         return ResponseEntity.ok().body(response);
     }
 
     @PostMapping("/property-price")
-    public ResponseEntity<PropertyResponse> calculatePropertyPrice(@RequestBody PropertyRequest request) {
+    public ResponseEntity<PropertyPriceResponse> calculatePropertyPrice(@Valid @RequestBody PropertyRequest request) {
         var response = this.homeEvaluateService.calculatePropertyPrice(request);
         return ResponseEntity.ok().body(response);
     }
 
     @PostMapping("/greater-room")
-    public ResponseEntity<RoomResponse> calculateGreaterRoom(@RequestBody PropertyRequest request) {
+    public ResponseEntity<RoomResponse> calculateGreaterRoom(@Valid @RequestBody PropertyRequest request) {
         var response = this.homeEvaluateService.calculateGreaterRoom(request);
         return ResponseEntity.ok().body(response);
     }
 
     @PostMapping("/square-meters-rooms")
-    public ResponseEntity<List<RoomResponse>> calculateEachRoomsSquareMeters(@RequestBody PropertyRequest request) {
+    public ResponseEntity<List<RoomResponse>> calculateEachRoomsSquareMeters(@Valid @RequestBody PropertyRequest request) {
         var response = this.homeEvaluateService.calculateEachRoomsSquareMeters(request);
         return ResponseEntity.ok().body(response);
     }

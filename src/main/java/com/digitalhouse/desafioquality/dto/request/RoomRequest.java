@@ -10,6 +10,12 @@ public class RoomRequest {
     private Double roomWidth;
     private Double roomLength;
 
+    public RoomRequest(String roomName, Double roomWidth, Double roomLength) {
+        this.roomName = roomName;
+        this.roomWidth = roomWidth;
+        this.roomLength = roomLength;
+    }
+
     public String getRoomName() {
         return roomName;
     }

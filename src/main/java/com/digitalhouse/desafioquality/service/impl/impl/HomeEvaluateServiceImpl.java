@@ -1,11 +1,12 @@
-package com.digitalhouse.desafioquality.service.impl;
+package com.digitalhouse.desafioquality.service.impl.impl;
 
 import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
 import com.digitalhouse.desafioquality.dto.request.RoomRequest;
-import com.digitalhouse.desafioquality.dto.response.PropertyResponse;
+import com.digitalhouse.desafioquality.dto.response.PropertyPriceResponse;
+import com.digitalhouse.desafioquality.dto.response.PropertySquareMeterResponse;
 import com.digitalhouse.desafioquality.dto.response.RoomResponse;
 import com.digitalhouse.desafioquality.repository.NeighborhoodRepository;
-import com.digitalhouse.desafioquality.service.HomeEvaluateService;
+import com.digitalhouse.desafioquality.service.impl.HomeEvaluateService;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -22,22 +23,26 @@ public class HomeEvaluateServiceImpl implements HomeEvaluateService {
     }
 
     @Override
-    public PropertyResponse calculateSquareMeters(PropertyRequest request) {
-        var squareMetersTotal = request.getRooms().stream().map(RoomRequest::calculateSquareMeters).reduce(Double::sum).get();
-        return new PropertyResponse(request.getPropertyName(), request.getPropertyDistrict(), squareMetersTotal, null, null);
+    public PropertySquareMeterResponse calculatePropertySquareMeters(PropertyRequest request) {
+        var squareMetersProperty = this.calculateSquareMetersProperty(request.getRooms());
+        return new PropertySquareMeterResponse(request.getPropertyName(), squareMetersProperty);
     }
 
     @Override
-    public PropertyResponse calculatePropertyPrice(PropertyRequest request) {
+    public PropertyPriceResponse calculatePropertyPrice(PropertyRequest request) {
         var propertyValue = this.calculatePrice(request);
-        return new PropertyResponse(request.getPropertyName(), request.getPropertyDistrict(), null, null, propertyValue);
+        return new PropertyPriceResponse(request.getPropertyName(), propertyValue);
     }
 
     private Double calculatePrice(PropertyRequest request) {
         var squareMeterValue = neighborhoodRepository.getSquareMeterValue(request.getPropertyDistrict());
-        var squareMetersTotal = request.getRooms().stream().map(RoomRequest::calculateSquareMeters).reduce(Double::sum).get();
+        var squareMetersProperty = this.calculateSquareMetersProperty(request.getRooms());
 
-        return squareMetersTotal * squareMeterValue;
+        return squareMetersProperty * squareMeterValue;
+    }
+
+    private Double calculateSquareMetersProperty(List<RoomRequest> rooms) {
+        return rooms.stream().map(RoomRequest::calculateSquareMeters).reduce(Double::sum).get();
     }
 
     @Override

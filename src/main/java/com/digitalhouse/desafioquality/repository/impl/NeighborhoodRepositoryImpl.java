@@ -1,5 +1,6 @@
 package com.digitalhouse.desafioquality.repository.impl;
 
+import com.digitalhouse.desafioquality.exceptions.ObjectNotFoundException;
 import com.digitalhouse.desafioquality.repository.NeighborhoodRepository;
 import org.springframework.stereotype.Service;
 
@@ -75,6 +76,12 @@ public class NeighborhoodRepositoryImpl implements NeighborhoodRepository {
 
     @Override
     public Double getSquareMeterValue(String neighborhoodName) {
-        return neighborhoods.entrySet().stream().filter(f -> f.getKey().toLowerCase().equals(neighborhoodName.toLowerCase())).findFirst().map(Map.Entry::getValue).orElse(null);
+        return neighborhoods.entrySet().stream().filter(f -> f.getKey().toLowerCase().equals(neighborhoodName.toLowerCase())).findFirst().map(Map.Entry::getValue).orElseThrow(() -> new ObjectNotFoundException("This neighborhood not exists"));
     }
+
+    @Override
+    public Map<String, Double> findAll() {
+        return this.neighborhoods;
+    }
+
 }
