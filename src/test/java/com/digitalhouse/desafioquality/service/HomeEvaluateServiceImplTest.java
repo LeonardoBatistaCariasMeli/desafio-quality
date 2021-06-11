@@ -1,7 +1,7 @@
-package com.digitalhouse.desafioquality.service.impl;
+package com.digitalhouse.desafioquality.service;
 
 import com.digitalhouse.desafioquality.repository.NeighborhoodRepository;
-import com.digitalhouse.desafioquality.service.impl.impl.HomeEvaluateServiceImpl;
+import com.digitalhouse.desafioquality.service.impl.HomeEvaluateServiceImpl;
 import com.digitalhouse.desafioquality.utils.TestUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,10 +23,9 @@ public class HomeEvaluateServiceImplTest {
     private NeighborhoodRepository neighborhoodRepository;
 
     @Test
-    public void shouldCalculateSquareMeters() {
+    public void shouldCalculatePropertySquareMeters() {
         var request = TestUtils.getPropertyRequest();
         var got = homeEvaluateService.calculatePropertySquareMeters(request);
-
         assertEquals(69.0, got.getSquareMeters());
     }
 

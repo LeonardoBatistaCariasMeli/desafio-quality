@@ -5,7 +5,7 @@ import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
 import com.digitalhouse.desafioquality.dto.response.PropertyPriceResponse;
 import com.digitalhouse.desafioquality.dto.response.PropertySquareMeterResponse;
 import com.digitalhouse.desafioquality.dto.response.RoomResponse;
-import com.digitalhouse.desafioquality.service.impl.HomeEvaluateService;
+import com.digitalhouse.desafioquality.service.HomeEvaluateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

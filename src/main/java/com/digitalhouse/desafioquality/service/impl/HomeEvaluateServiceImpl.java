@@ -1,4 +1,4 @@
-package com.digitalhouse.desafioquality.service.impl.impl;
+package com.digitalhouse.desafioquality.service.impl;
 
 import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
 import com.digitalhouse.desafioquality.dto.request.RoomRequest;
@@ -6,7 +6,7 @@ import com.digitalhouse.desafioquality.dto.response.PropertyPriceResponse;
 import com.digitalhouse.desafioquality.dto.response.PropertySquareMeterResponse;
 import com.digitalhouse.desafioquality.dto.response.RoomResponse;
 import com.digitalhouse.desafioquality.repository.NeighborhoodRepository;
-import com.digitalhouse.desafioquality.service.impl.HomeEvaluateService;
+import com.digitalhouse.desafioquality.service.HomeEvaluateService;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;

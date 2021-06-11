@@ -1,4 +1,4 @@
-package com.digitalhouse.desafioquality.service.impl;
+package com.digitalhouse.desafioquality.service;
 
 import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
 import com.digitalhouse.desafioquality.dto.response.PropertyPriceResponse;
