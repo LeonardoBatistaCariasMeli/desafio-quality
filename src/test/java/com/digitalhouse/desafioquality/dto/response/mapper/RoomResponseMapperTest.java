@@ -9,12 +9,11 @@ public class RoomResponseMapperTest {
 
     @Test
     public void shouldAssembleRoomResponse() {
-        var expected = TestUtils.getPropertyRequest();
-        var expectedRoom = expected.getRooms().get(0);
+        var expected = TestUtils.getRoom();
 
-        var got = RoomResponseMapper.assembleRoomResponseOf(expectedRoom);
+        var got = RoomResponseMapper.assembleRoomResponseOf(expected);
 
-        assertEquals(expectedRoom.getRoomName(), got.getRoomName());
-        assertEquals(expectedRoom.calculateSquareMeters(), got.getSquareMeters());
+        assertEquals(expected.getRoomName(), got.getRoomName());
+        assertEquals(expected.calculateSquareMeters(), got.getSquareMeters());
     }
 }

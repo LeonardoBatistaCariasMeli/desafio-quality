@@ -1,6 +1,7 @@
 package com.digitalhouse.desafioquality.utils;
 
 import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
+import com.digitalhouse.desafioquality.domain.Room;
 import com.digitalhouse.desafioquality.dto.request.RoomRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,6 +27,10 @@ public interface TestUtils {
 
     static RoomRequest getRoomRequest() {
         return new RoomRequest("Cozinha", 4.0, 6.0);
+    }
+
+    static Room getRoom() {
+        return new Room("Cozinha", 4.0, 6.0);
     }
 
     static PropertyRequest getPropertyRequestInvalid() {

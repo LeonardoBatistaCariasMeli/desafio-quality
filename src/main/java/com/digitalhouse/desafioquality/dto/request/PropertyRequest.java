@@ -1,23 +1,16 @@
 package com.digitalhouse.desafioquality.dto.request;
 
-import com.digitalhouse.desafioquality.dto.request.validation.PropertyNameValidation;
+import com.digitalhouse.desafioquality.dto.request.validation.PropertyRequestValidation;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 
+@PropertyRequestValidation
 public class PropertyRequest {
 
-    @PropertyNameValidation
     private String propertyName;
-
-    @Size(min = 3, max = 45, message = "The property district must be between 3 or 45 characters.")
-    @NotBlank(message = "Mandatory filling")
     private String propertyDistrict;
 
-    @NotNull
     @Valid
     private List<RoomRequest> rooms;
 

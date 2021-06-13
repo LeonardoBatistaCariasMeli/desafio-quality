@@ -1,5 +1,7 @@
 package com.digitalhouse.desafioquality.service.impl;
 
+import com.digitalhouse.desafioquality.domain.Room;
+import com.digitalhouse.desafioquality.domain.mapper.RoomMapper;
 import com.digitalhouse.desafioquality.dto.request.PropertyRequest;
 import com.digitalhouse.desafioquality.dto.request.RoomRequest;
 import com.digitalhouse.desafioquality.dto.response.PropertyPriceResponse;
@@ -45,19 +47,22 @@ public class HomeEvaluateServiceImpl implements HomeEvaluateService {
     }
 
     private Double calculateSquareMetersProperty(List<RoomRequest> rooms) {
-        return rooms.stream().map(RoomRequest::calculateSquareMeters).reduce(Double::sum).get();
+        var list = RoomMapper.assembleListRoomOf(rooms);
+        return list.stream().map(Room::calculateSquareMeters).reduce(Double::sum).get();
     }
 
     @Override
     public RoomResponse calculateGreaterRoom(PropertyRequest request) {
-        var higherRoom = request.getRooms().stream().max(Comparator.comparing(r -> r.calculateSquareMeters())).get();
+        var list = RoomMapper.assembleListRoomOf(request.getRooms());
+        var higherRoom = list.stream().max(Comparator.comparing(r -> r.calculateSquareMeters())).get();
 
         return RoomResponseMapper.assembleRoomResponseOf(higherRoom);
     }
 
     @Override
     public List<RoomResponse> calculateEachRoomsSquareMeters(PropertyRequest request) {
-        return request.getRooms().stream().map(r -> RoomResponseMapper.assembleRoomResponseOf(r)).collect(Collectors.toList());
+        var list = RoomMapper.assembleListRoomOf(request.getRooms());
+        return list.stream().map(r -> RoomResponseMapper.assembleRoomResponseOf(r)).collect(Collectors.toList());
     }
 
 }

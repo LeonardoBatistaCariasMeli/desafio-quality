@@ -26,6 +26,7 @@ public class HomeEvaluateServiceImplTest {
     public void shouldCalculatePropertySquareMeters() {
         var request = TestUtils.getPropertyRequest();
         var got = homeEvaluateService.calculatePropertySquareMeters(request);
+
         assertEquals(69.0, got.getSquareMeters());
     }
 

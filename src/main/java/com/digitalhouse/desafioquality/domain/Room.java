@@ -1,14 +1,11 @@
-package com.digitalhouse.desafioquality.dto.request;
+package com.digitalhouse.desafioquality.domain;
 
-import com.digitalhouse.desafioquality.dto.request.validation.RoomRequestValidation;
-
-@RoomRequestValidation
-public class RoomRequest {
+public class Room {
     private String roomName;
     private Double roomWidth;
     private Double roomLength;
 
-    public RoomRequest(String roomName, Double roomWidth, Double roomLength) {
+    public Room(String roomName, Double roomWidth, Double roomLength) {
         this.roomName = roomName;
         this.roomWidth = roomWidth;
         this.roomLength = roomLength;
@@ -24,5 +21,9 @@ public class RoomRequest {
 
     public Double getRoomLength() {
         return roomLength;
+    }
+
+    public Double calculateSquareMeters() {
+        return this.roomWidth * this.roomLength;
     }
 }
