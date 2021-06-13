@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "3242a2bf-d98a-47ee-98de-019d1dd40f47",
+		"name": "desafio-quality",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/home-evaluate/square-meters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"propertyName\": \"Casa\",\n    \"propertyDistrict\": \"Adalgisa\",\n    \"rooms\": [\n        {\n            \"roomName\": \"Co\",\n            \"roomWidth\": 7.5\n        },\n        {\n            \"roomName\": \"banheiro\",\n            \"roomWidth\": 5.0,\n            \"roomLength\": 5.0\n        },\n        {\n            \"roomName\": \"Sala de estar\",\n            \"roomWidth\": 15.0,\n            \"roomLength\": 7.5\n        },\n        {\n            \"roomName\": \"Quarto casal\",\n            \"roomWidth\": 15.0,\n            \"roomLength\": 15.0\n        },\n        {\n            \"roomName\": \"Quarto infantil\",\n            \"roomWidth\": 7.5,\n            \"roomLength\": 10.0\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/home-evaluate/square-meters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"home-evaluate",
+						"square-meters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/home-evaluate/property-price",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"propertyName\": \"Casa\",\n    \"propertyDistrict\": \"Adalgisa\",\n    \"rooms\": [\n        {\n            \"roomName\": \"Cozinha\",\n            \"roomWidth\": 7.5,\n            \"roomLength\": 18.5\n        },\n        {\n            \"roomName\": \"Banheiro\",\n            \"roomWidth\": 5.0,\n            \"roomLength\": 5.0\n        },\n        {\n            \"roomName\": \"Sala de estar\",\n            \"roomWidth\": 15.0,\n            \"roomLength\": 7.5\n        },\n        {\n            \"roomName\": \"Quarto casal\",\n            \"roomWidth\": 15.0,\n            \"roomLength\": 15.0\n        },\n        {\n            \"roomName\": \"Quarto infantil\",\n            \"roomWidth\": 7.5,\n            \"roomLength\": 10.0\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/home-evaluate/property-price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"home-evaluate",
+						"property-price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/home-evaluate/greater-room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"propertyName\": \"Casa\",\n    \"propertyDistrict\": \"Adalgisa\",\n    \"rooms\": [\n        {\n            \"roomName\": \"Cozinha\",\n            \"roomWidth\": 7.5,\n            \"roomLength\": 18.5\n        },\n        {\n            \"roomName\": \"banheiro\",\n            \"roomWidth\": 5.0,\n            \"roomLength\": 5.0\n        },\n        {\n            \"roomName\": \"Sala de estar\",\n            \"roomWidth\": 15.0,\n            \"roomLength\": 7.5\n        },\n        {\n            \"roomName\": \"Quarto casal\",\n            \"roomWidth\": 15.0,\n            \"roomLength\": 15.0\n        },\n        {\n            \"roomName\": \"Quarto infantil\",\n            \"roomWidth\": 7.5,\n            \"roomLength\": 10.0\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/home-evaluate/greater-room",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"home-evaluate",
+						"greater-room"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/home-evaluate/square-meters-rooms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"propertyName\": \"Casa\",\n    \"propertyDistrict\": \"Adalgisa\",\n    \"rooms\": [\n        {\n            \"roomName\": \"Cozinha\",\n            \"roomWidth\": 7.5,\n            \"roomLength\": 18.5\n        },\n        {\n            \"roomName\": \"banheiro\",\n            \"roomWidth\": 5.0,\n            \"roomLength\": 5.0\n        },\n        {\n            \"roomName\": \"Sala de estar\",\n            \"roomWidth\": 15.0,\n            \"roomLength\": 7.5\n        },\n        {\n            \"roomName\": \"Quarto casal\",\n            \"roomWidth\": 15.0,\n            \"roomLength\": 15.0\n        },\n        {\n            \"roomName\": \"Quarto infantil\",\n            \"roomWidth\": 7.5,\n            \"roomLength\": 10.0\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/home-evaluate/square-meters-rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"home-evaluate",
+						"square-meters-rooms"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
