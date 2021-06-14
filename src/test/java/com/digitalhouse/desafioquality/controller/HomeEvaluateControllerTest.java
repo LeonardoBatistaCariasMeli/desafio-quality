@@ -46,6 +46,15 @@ public class HomeEvaluateControllerTest {
     }
 
     @Test
+    public void shouldCalculatePropertySquareMetersInvalidRequestWithoutBody() throws Exception {
+        this.mockMvc.perform(
+                post("/home-evaluate/square-meters")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(""))
+                .andDo(print()).andExpect(status().isBadRequest());
+    }
+
+    @Test
     public void shouldCalculatePropertyPriceValidRequest() throws Exception {
         this.mockMvc.perform(
                 post("/home-evaluate/property-price")
@@ -62,6 +71,15 @@ public class HomeEvaluateControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(REQUEST_INVALID))
                 .andDo(print()).andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldCalculatePropertyPriceInvalidRequestWithoutBody() throws Exception {
+        this.mockMvc.perform(
+                post("/home-evaluate/property-price")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(""))
+                .andDo(print()).andExpect(status().isBadRequest());
     }
 
     @Test
@@ -84,6 +102,15 @@ public class HomeEvaluateControllerTest {
     }
 
     @Test
+    public void shouldCalculateGreaterRoomInvalidRequestWithoutBody() throws Exception {
+        this.mockMvc.perform(
+                post("/home-evaluate/greater-room")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(""))
+                .andDo(print()).andExpect(status().isBadRequest());
+    }
+
+    @Test
     public void shouldCalculateEachRoomsSquareMetersValidRequest() throws Exception {
         this.mockMvc.perform(
                 post("/home-evaluate/square-meters-rooms")
@@ -102,5 +129,14 @@ public class HomeEvaluateControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(REQUEST_INVALID))
                 .andDo(print()).andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldCalculateEachRoomsSquareMetersInvalidRequestWithoutBody() throws Exception {
+        this.mockMvc.perform(
+                post("/home-evaluate/square-meters-rooms")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(""))
+                .andDo(print()).andExpect(status().isBadRequest());
     }
 }
