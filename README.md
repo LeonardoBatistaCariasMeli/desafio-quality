@@ -7,18 +7,24 @@ documentação anexada.
 
 ## como rodar o projeto
 
-1. Clonar o projeto
+1. Clonar o projeto:
 
 ```
  git@github.com:LeonardoBatistaCariasMeli/desafio-quality.git
 ```
 
-2. rodar o projeto pelo IntelliJ IDEA
+2. Rodar o projeto pelo IntelliJ IDEA.
 
 ## Testar as Rotas
 
 1. Para testar as rotas foi disponibilizado a collection do postman na raiz do projeto.
-
+```
+desafio-quality.postman_collection.json
+```
+2. E por fim acessar cada endpoint através do endereço:
+```
+ http://localhost
+```
 ## Endpoints
 
 ## US-0001:
