@@ -74,7 +74,7 @@ Parametros:
 | ----------- | ---- | --------- |
 | propertyName | String | Nome de identificação da propriedade |
 | propertyDistrict | String | Nome de identificação do bairro |
-| rooms | Room | Lista de todos os comodos da propriedade |
+| rooms | List | Lista de todos os comodos da propriedade |
 | roomName | String | Nome de identificação do comodo |
 | roomWidth | Double | Largura do comodo |
 | roomLength | Double | Altura do comodo |
@@ -148,7 +148,7 @@ Parametros:
 | ----------- | ---- | --------- |
 | propertyName | String | Nome de identificação da propriedade |
 | propertyDistrict | String | Nome de identificação do bairro |
-| rooms | Room | Lista de todos os comodos da propriedade |
+| rooms | List | Lista de todos os comodos da propriedade |
 | roomName | String | Nome de identificação do comodo |
 | roomWidth | Double | Largura do comodo |
 | roomLength | Double | Altura do comodo |
@@ -223,7 +223,7 @@ Parametros:
 | ----------- | ---- | --------- |
 | propertyName | String | Nome de identificação da propriedade |
 | propertyDistrict | String | Nome de identificação do bairro |
-| rooms | Room | Lista de todos os comodos da propriedade |
+| rooms | List | Lista de todos os comodos da propriedade |
 | roomName | String | Nome de identificação do comodo |
 | roomWidth | Double | Largura do comodo |
 | roomLength | Double | Altura do comodo |
@@ -301,7 +301,7 @@ Parametros:
 | ----------- | ---- | --------- |
 | propertyName | String | Nome de identificação da propriedade |
 | propertyDistrict | String | Nome de identificação do bairro |
-| rooms | Room | Lista de todos os comodos da propriedade |
+| rooms | List | Lista de todos os comodos da propriedade |
 | roomName | String | Nome de identificação do comodo |
 | roomWidth | Double | Largura do comodo |
 | roomLength | Double | Altura do comodo |
