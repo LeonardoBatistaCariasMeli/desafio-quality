@@ -32,15 +32,4 @@ public class PropertyRequest {
         return rooms;
     }
 
-    public void setPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-    }
-
-    public void setPropertyDistrict(String propertyDistrict) {
-        this.propertyDistrict = propertyDistrict;
-    }
-
-    public void setRooms(List<RoomRequest> rooms) {
-        this.rooms = rooms;
-    }
 }

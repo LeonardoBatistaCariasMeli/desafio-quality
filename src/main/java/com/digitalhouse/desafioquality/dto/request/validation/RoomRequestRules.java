@@ -29,7 +29,7 @@ public class RoomRequestRules implements ConstraintValidator<RoomRequestValidati
 
         this.validateRoomName(obj.getRoomName());
         this.validateRoomWidth(obj.getRoomWidth());
-        this.validateRoomWidth(obj.getRoomLength());
+        this.validateRoomLength(obj.getRoomLength());
 
         ERRORS_MESSAGES.stream().forEach(e -> {
             context.disableDefaultConstraintViolation();
